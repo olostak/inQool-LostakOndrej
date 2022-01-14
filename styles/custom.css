@@ -1,0 +1,27 @@
+html,body {
+    height:100%;
+    margin:0;
+}
+
+nav {
+    height:100px;
+    line-height:100px;
+    background:#0080ff;
+    color:#fff;
+    font-size:40px;
+    text-align:center;
+}
+
+.column {
+    width:50%;
+    height:100%;
+    background-size:contain;
+}
+.column.left {
+    background-image:url(http://placehold.it/1000x800/ca6602/fff?text=Image+1);
+    float:left;
+}
+.column.right {
+    background-image:url(http://placehold.it/1000x800/e10227/fff?text=Image+2);
+    float:right;
+}

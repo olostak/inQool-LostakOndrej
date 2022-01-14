@@ -1,0 +1,49 @@
+{block content}
+    <style>
+        table, th, td {
+          border:1px solid black;
+          font-size: 20px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 25px;
+        }
+
+        .article {
+          display: inline-block;
+          width: 100%;
+          text-align:center;
+        }
+    </style>
+    {var $keys = array_keys($articles)}
+    <div class="row" style="margin-top: 10%; margin-bottom: 10%">
+        {for $i = 0; $i < 3; $i++}
+            {var $article = $articles[$keys[$i]]}
+            <div class="col-12 col-md-4">
+                <div class="article">
+                    <div class="date">{$article['date']|date:'j. n. Y'}</div>
+                    <h2><a href="{link Article:show $keys[$i]}">{$article['title']}</a></h2>
+                    <span>Kategorie: </span>
+                    {foreach $article['categories'] as $category}
+                        <span>{$category}</span>
+                    {/foreach}
+
+                    <div>{$article['content']|truncate:256}</div>
+                </div>
+            </div>
+        {/for}
+    </div>
+    <hr>
+    <div class="container" style="text-align:center;">
+        <table>
+            <tr>
+                <th>Kategorie</th>
+                <th>Počet</th>
+              </tr>
+              <tr>
+            {foreach $categories as $category => $count}
+                <tr><td>{$category}</td><td>{$count}</td></tr>
+            {/foreach}
+        </table>
+        <p style="margin-top:25px; font-size:20px;">Počet kategorií v databázi je {count($categories)}.</p>
+    </div>
+{/block}

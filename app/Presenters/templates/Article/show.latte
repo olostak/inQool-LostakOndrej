@@ -1,0 +1,15 @@
+{block content}
+    <div class="container" style="margin: 10%">
+	<p><a n:href="Homepage:default">← Home</a></p>
+	<h1>{$article->title}</h1>
+	<div class="categories" style="display: inline">
+    	{foreach $categories as $category}
+    		<h3>{$category->category}</h3>
+    	{/foreach}
+    </div>
+
+    <div class="date">{$article->date|date:'j. n. Y'}</div>
+
+    <div>{$article->content}</div>
+    </div>
+{/block}
