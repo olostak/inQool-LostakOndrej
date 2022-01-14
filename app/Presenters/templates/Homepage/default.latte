@@ -10,26 +10,38 @@
             float: right;
         }
 
+        .bg {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background-image: url('images/brno.jpg');
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         @media only screen and (max-width: 768px) {
             /* For mobile phones: */
-            .col {
+            .col-1 {
                 width: 100%;
+            }
+            .bg {
+                background-image: none;
             }
         }
     </style>
     <div class="container"
-    <div class="row">
-        <div class="col-1">
-            <div style="position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
-                <h1>New Article</h1>
-                {snippet createForm}
-                    {control articleForm}
-                {/snippet}
+    <div class="col-1">
+        <div style="position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+            <h1>New Article</h1>
+            <div n:snippetArea="clearForm">
+                {control articleForm}
             </div>
         </div>
-        <div class="col-2">
-            <img class="img-responsive" src="images/brno.jpg" alt="Brno">
-        </div>
+    </div>
+    <div class="bg">
     </div>
 {/block}
 

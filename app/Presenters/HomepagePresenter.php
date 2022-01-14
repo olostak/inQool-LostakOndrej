@@ -20,20 +20,27 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
     protected function createComponentArticleForm(): Form
     {
         $form = new Form;
+        $form->getElementPrototype()->class('ajax');
         $form->addText('title', 'Title:')
+            ->setHtmlAttribute('placeholder', 'Article name')
+            ->setHtmlAttribute('style', "margin: 10px 0; width: 250px;")
             ->setRequired();
         $form->addTextArea('content', 'Content:')
+            ->setHtmlAttribute('placeholder', 'Content')
+            ->setHtmlAttribute('style', "margin: 10px 0; width: 250px; height: 30%;")
             ->setRequired();
-        $form->addTextArea('categories', 'Categories:');
+        $form->addTextArea('categories', 'Categories:')
+            ->setHtmlAttribute('style', "margin: 10px 0; width: 250px; height: 20%;")
+            ->setHtmlAttribute('placeholder', 'Category1, Category2, Category3...');
 
-        $form->addSubmit('send', 'Save');
-        $form->onSubmit[] = [$this, 'submit'];
+        $form->addSubmit('send', 'Save')
+            ->setHtmlAttribute('class', "btn btn-success");
         $form->onSuccess[] = [$this, 'createFormSucceeded'];
 
         return $form;
     }
 
-    public function createFormSucceeded(array $data): void
+    public function createFormSucceeded($form, array $data): void
     {
         $categoriesStr = "";
         if (array_key_exists('categories', $data)) {
@@ -54,15 +61,11 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
             }
         }
 
-        $this->flashMessage('Article submitted successfully', 'success');
-        $this->redirect('Article:show', $article->id);
-    }
-
-    public function submit($form)
-    {
-
         if ($this->isAjax()) {
-            $this->redrawControl("createForm");
+            $form->reset();
+            $this->flashMessage('Article submitted successfully', 'success');
+            $this->redrawControl("clearForm");
         }
+        $this->redirect('Article:show', $article->id);
     }
 }

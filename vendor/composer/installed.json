@@ -1,5 +1,75 @@
 [
     {
+        "name": "contributte/forms-bootstrap",
+        "version": "v0.5.2",
+        "version_normalized": "0.5.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/contributte/forms-bootstrap.git",
+            "reference": "74dae1f8d1be30d9b4ca0901c500db10525cc7aa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/contributte/forms-bootstrap/zipball/74dae1f8d1be30d9b4ca0901c500db10525cc7aa",
+            "reference": "74dae1f8d1be30d9b4ca0901c500db10525cc7aa",
+            "shasum": ""
+        },
+        "require": {
+            "nette/application": "^3.0",
+            "nette/forms": "3.1.6",
+            "php": ">=7.2"
+        },
+        "require-dev": {
+            "ninjify/qa": "^v0.12",
+            "phpstan/phpstan": "^0.12.6",
+            "phpstan/phpstan-deprecation-rules": "^0.12",
+            "phpstan/phpstan-nette": "^0.12",
+            "phpstan/phpstan-strict-rules": "^0.12",
+            "phpunit/phpunit": "^8.5"
+        },
+        "time": "2021-11-25T09:31:08+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Contributte\\FormsBootstrap\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dalibor Korpar",
+                "email": "dalibor.korpar@gmail.com"
+            }
+        ],
+        "description": "Nette extension for Bootstrap forms",
+        "homepage": "https://github.com/contributte/forms-bootstrap",
+        "keywords": [
+            "Forms",
+            "bootstrap",
+            "library",
+            "nette"
+        ],
+        "funding": [
+            {
+                "url": "https://contributte.org/partners.html",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/f3l1x",
+                "type": "github"
+            }
+        ]
+    },
+    {
         "name": "latte/latte",
         "version": "v2.10.6",
         "version_normalized": "2.10.6.0",

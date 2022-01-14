@@ -27,6 +27,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/http" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/forms" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/contributte/forms-bootstrap" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

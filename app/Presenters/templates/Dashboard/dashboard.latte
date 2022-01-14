@@ -17,6 +17,7 @@
     {var $keys = array_keys($articles)}
     <div class="row" style="margin-top: 10%; margin-bottom: 10%">
         {for $i = 0; $i < 3; $i++}
+            {if $i < count($keys)}
             {var $article = $articles[$keys[$i]]}
             <div class="col-12 col-md-4">
                 <div class="article">
@@ -30,6 +31,7 @@
                     <div>{$article['content']|truncate:256}</div>
                 </div>
             </div>
+                {/if}
         {/for}
     </div>
     <hr>
